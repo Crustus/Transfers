@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    
+    <TextView
+        android:id="@+id/filter_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:padding="16dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        />
+
+    <cz.crusty.transfers.widget.FilterBox.FilterBoxView
+        android:id="@+id/filter_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:padding="16dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:descendantFocusability="beforeDescendants"
+        tools:visibility="gone"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="cz.crusty.transfers.RecordFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ui.overview.OverviewFragment"
+        tools:listitem="@layout/item_overview"
+        />
+
+</LinearLayout>
