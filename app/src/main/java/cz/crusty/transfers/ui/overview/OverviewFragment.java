@@ -92,9 +92,12 @@ public class OverviewFragment extends BaseFragment
             @Override
             public boolean onPreDraw() {
                 mFilterBoxHeight = mFilterBox.getMeasuredHeight();
+                // FIXME better FilterBox height size obtaining
+                if(mFilterBoxHeight <= 0)
+                    return true;
                 mFilterBox.setVisibility(View.GONE);
                 mFilterBox.getViewTreeObserver().removeOnPreDrawListener(this);
-                return false;
+                return true;
             }
         });
 
